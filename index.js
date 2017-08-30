@@ -10,7 +10,26 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  response.render('pages/index', { val: ""});
+});
+app.get('/about', function(request, response) {
+  response.render('pages/about', { val: "About"});
+});
+
+app.get('/gallery', function(request, response) {
+  response.render('pages/gallery', { val: "Projects"});
+});
+
+app.get('/contact', function(request, response) {
+  response.render('pages/contact', {val: "Contact"});
+});
+
+app.get('/codes', function(request, response) {
+  response.render('pages/codes', {val: ""});
+});
+
+app.get('/icons', function(request, response) {
+  response.render('pages/icons', {val: ""});
 });
 
 app.listen(app.get('port'), function() {
